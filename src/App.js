@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import Categories from './component/Categories'
+import Routes from './component/Routes'
+import { items } from './data'
+
+// Get all categories without duplication
+const allCategories = [...new Set(items.map((item) => item.category))]
 
 function App() {
+  const [routes, setRoutes] = useState(items)
+  // holds un-duplicated values
+  const categories = allCategories
+
+  // Filter through the categories
+  const filterItems = (category) => {
+    const newItems = items.filter((item) => item.category === category)
+    setRoutes(newItems)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main>
+      <section>
+        <Categories categories={categories} filterItems={filterItems} />
+        <Routes routes={routes} />
+      </section>
+    </main>
+  )
 }
 
-export default App;
+export default App
