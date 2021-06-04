@@ -28,7 +28,7 @@ export const items = [
         text: 'Night Tour',
       },
     ],
-    category: 'bus stop',
+    category: 'bus stops',
     busIcon: [bus, num17],
   },
   {
@@ -48,7 +48,7 @@ export const items = [
       },
     ],
 
-    category: 'bus stop',
+    category: 'bus stops',
     busIcon: [bus, num3],
   },
 
