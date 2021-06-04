@@ -70,9 +70,12 @@ hr {
 }
 .route__tags {
   display: grid;
-  gap: 1px;
+  grid-template-columns: 1fr 1fr;
 }
-
+.route__tags-flex {
+  display: inline-block;
+  margin: 4px 7px;
+}
 .route__tag {
   width: fit-content;
   color: #ffffff;
