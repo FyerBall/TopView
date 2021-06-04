@@ -26,11 +26,14 @@ function Routes({ routes }) {
                 <span className='route__address'>{address}</span>
               </div>
             </div>
-
-            <ul className='route__tags'>
-              {/* This could have its own component */}
-              {tags &&
-                tags.map((tag, _id) => (
+ {tags && (
+              <ul
+                className={
+                  tags.length <= 2 ? 'route__tags-flex' : 'route__tags'
+                }
+              >
+                {/* This could have its own component */}
+                {tags.map((tag, _id) => (
                   <li
                     className='route__tag'
                     key={_id}
@@ -39,7 +42,8 @@ function Routes({ routes }) {
                     {tag.text}
                   </li>
                 ))}
-            </ul>
+              </ul>
+            )}
             <hr />
           </article>
         )
