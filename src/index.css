@@ -22,7 +22,7 @@ li {
 hr {
   margin: 20px auto;
   outline: none;
-  border: 1px solid #bfbfbf;
+  border: 1px solid #dbdbdb;
 }
 
 .categories {
@@ -70,14 +70,18 @@ hr {
 }
 .route__tags {
   display: grid;
-  gap: 1px;
+  grid-template-columns: 1fr 1fr;
+}
+.route__tags-flex {
+  display: inline-block;
+  margin: 4px 7px;
 }
 
 .route__tag {
   width: fit-content;
   color: #ffffff;
-  padding: 5px 10px;
+  padding: 5px 15px;
   border-radius: 20px;
-  margin: 2px 7px;
+  margin: 4px 7px;
   font-size: 12.5px;
 }
